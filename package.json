@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "canvas": "canvas-sketch sketches/scale.js --new --output=sketches/output/distrubuteAroundCircle"
+    "canvas": "canvas-sketch sketches/arcs --output=sketches/output/arcs"
   },
   "repository": {
     "type": "git",
