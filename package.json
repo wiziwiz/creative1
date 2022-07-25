@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "canvas": "canvas-sketch sketches/sketch-02.js --output=sketches/output/02"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/wiziwiz/creative1#readme",
   "dependencies": {
+    "canvas-sketch": "^0.7.5",
+    "canvas-sketch-cli": "^1.11.15",
     "express": "^4.18.1",
     "nodemon": "^2.0.19"
   }
