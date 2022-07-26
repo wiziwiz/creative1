@@ -52,7 +52,6 @@ const distributeAroundCircle = (context, width, height, num, draw) => {
     
     context.restore();
 
-    // context.fillStyle = 'black';
     context.save();
     context.translate(cx, cy);
     context.rotate(-angle);
