@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "canvas": "canvas-sketch sketches/grid --output=sketches/output/grid"
+    "canvas": "canvas-sketch sketches/text --new --output=sketches/output/text"
   },
   "repository": {
     "type": "git",
