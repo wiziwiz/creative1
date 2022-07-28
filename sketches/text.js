@@ -7,8 +7,8 @@ const settings = {
 
 let manager;
 
-let text = 'A';
-let fontSize = 1200;
+let text = 'APPLIO';
+let fontSize = 0;
 let fontFamily = 'serif';
 
 //creating a small canvas with the letter to represent with different shapes.
@@ -16,7 +16,7 @@ const typeCanvas = document.createElement('canvas');
 const typeContext = typeCanvas.getContext('2d');
 
 const sketch = ({ context, width, height }) => {
-	const cell = 20; // size of a pixel of the type canvas in the main one.
+	const cell = 15; // size of a pixel of the type canvas in the main one. Decreasing it allows to have smaller 'pixels' on the main canvas
 	const cols = Math.floor(width  / cell); // for every pixel in the typeCanvas we'll get one pixel in the main canvas
 	const rows = Math.floor(height / cell);
 	const numCells = cols * rows;
@@ -26,9 +26,9 @@ const sketch = ({ context, width, height }) => {
 
 	return ({ context, width, height }) => {
 		typeContext.fillStyle = 'black';
-		typeContext.fillRect(0, 0, cols, rows);
+		typeContext.fillRect(0, 0, typeCanvas.width, typeCanvas.height);
 
-		fontSize = cols * 1.2;
+		fontSize = cols * 0.7; //Decreasing it allows to have more displayed
     // fontSize = cols * 0.3;
 
 		typeContext.fillStyle = 'white';
@@ -67,11 +67,11 @@ const sketch = ({ context, width, height }) => {
 
 		context.fillStyle = 'black';
 		context.fillRect(0, 0, width, height);
-
+		// centering roughly the glyphs in the main context cells. 
 		context.textBaseline = 'middle';
 		context.textAlign = 'center';
 
-		// context.drawImage(typeCanvas, 0, 0);
+		context.drawImage(typeCanvas, 0, 0);
 		//reading data from type canvas and converting it in the main canvas.
 		for (let i = 0; i < numCells; i++) {
 			const col = i % cols;
@@ -126,8 +126,8 @@ const getGlyph = (v) => {
 
 
 const onKeyUp = (e) => {
-	// text = `${text}${e.key.toUpperCase()}`;
-	text = e.key.toUpperCase();
+	text = `${text}${e.key.toUpperCase()}`;
+	// text = e.key.toUpperCase();
 	manager.render();
 };
 
