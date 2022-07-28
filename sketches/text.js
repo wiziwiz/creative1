@@ -2,7 +2,7 @@ const canvasSketch = require('canvas-sketch');
 const random = require('canvas-sketch-util/random');
 
 const settings = {
-	dimensions: [ 1080, 1080 ]
+	dimensions: [ 2160, 1080 * 0.6]
 };
 
 let manager;
@@ -28,8 +28,7 @@ const sketch = ({ context, width, height }) => {
 		typeContext.fillStyle = 'black';
 		typeContext.fillRect(0, 0, typeCanvas.width, typeCanvas.height);
 
-		fontSize = cols * 0.7; //Decreasing it allows to have more displayed
-    // fontSize = cols * 0.3;
+		fontSize = cols * 0.25; //Decreasing it allows to have more displayed
 
 		typeContext.fillStyle = 'white';
 		typeContext.font = `${fontSize}px ${fontFamily}`;
