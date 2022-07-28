@@ -7,7 +7,7 @@ const settings = {
 
 let manager;
 
-let text = 'APPLIO';
+let text = 'GZ';
 let fontSize = 0;
 let fontFamily = 'serif';
 
@@ -125,7 +125,7 @@ const getGlyph = (v) => {
 
 
 const onKeyUp = (e) => {
-	text = `${text}${e.key.toUpperCase()}`;
+	// text = `${text}${e.key.toUpperCase()}`;
 	// text = e.key.toUpperCase();
 	manager.render();
 };
